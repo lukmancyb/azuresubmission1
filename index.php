@@ -26,7 +26,7 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "kominfoserver.database.windows.net";
+    $host = "httpkominfoserver.database.windows.net";
     $user = "kominfoadminserver";
     $pass = "lukm4nh@kim";
     $db = "kominfodatabase";
@@ -60,7 +60,7 @@
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
-            $sql_select = "SELECT * FROM User";
+            $sql_select = "SELECT * FROM [dbo].[User]";
             $stmt = $conn->query($sql_select);
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
